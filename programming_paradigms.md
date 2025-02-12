@@ -43,4 +43,5 @@ The software architecture we have opted to use for this project is MVC - Model V
 MVC separates an application into three components; the model, the view, and the controller. The model represents the data and business logic, the view is responsible for presentation of the data to the user, and the controller is the middleman between the view and model, it updates the model according to input from the view but also does the opposite, updating the view to reflect changes in the model.
 
 ![MVC Diagram](./images/MVC_diagram.png)
+
 Diagram of how MVC works.
