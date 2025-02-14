@@ -134,11 +134,36 @@ In the above example the Student class does not need to redefine the greet funct
 
 #### <ins>**Polymorphism**</ins>
 
-Polymorphism simply means "having many forms", so in the context of programming it means an object being able to have different characteristics and functions. When a class inherits methods from a parent class the methods of the child class can be the same as the parent class but also be changed to suit different situations.
+Polymorphism simply means "having many forms", so in the context of programming it means an object being able to have different characteristics and functions. When a class inherits methods from a parent class the methods of the child class can be the same as the parent class but also be changed to suit different situations. One way to do this is through method overriding. Method overriding is when the child class implements it's own functionality over the parent class' method.
 
-Polymorphism can be done in two ways: 
-- Method overriding: The child class implements it's own functionality over the parent class' method.
-- Method overloading: A function behaves differently based on the number or type of its arguments.
+Let's look at an example:
+
+```js
+class Animal {
+    speak() {
+      console.log("This animal makes a sound.");
+    }
+  }
+  
+  class Dog extends Animal {
+    speak() {
+      console.log("The dog barks."); // override the speak() function of Animal parent class
+    }
+  }
+  
+  class Cat extends Animal {
+    speak() {
+      console.log("The cat meows."); // override the speak() function of Animal parent class
+    }
+  }
+  
+  const animals = [new Animal(), new Dog(), new Cat()];
+  
+  animals.forEach(animal => animal.speak());
+```
+
+We see in this example the Dog and Cat child classes redefine the function of the same name, speak() from their parent class Animal.
+
 
 ## **App Architecture - MVC**
 
