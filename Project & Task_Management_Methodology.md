@@ -12,7 +12,7 @@ The following are some important practices of Agile:
 -	Daily Stand-ups: These are short meetings that take place every day, during which team members share updates on their progress and discuss their future moves.
 -	Retrospectives: These sessions take place at the end of each sprint to discuss what went well and to determine areas where improvements may be made.
 
-![Agile Methodology](./images/Agile%20Process.png)
+[Agile Methodology](./images/[Agile%20Process.png])
 
 ### **Scrum Methodology**
 Scrum is an Agile framework that organizes software development into cycles called Sprints, which typically run between two and four weeks. At the beginning of each sprint, the team holds a planning meeting in which they select items from a backlog that they think they will be able to do within the sprint.
