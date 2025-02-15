@@ -8,7 +8,7 @@ This client/server relationship communicate over a network such as the internet 
 
 <br> 
 
- ![alt text](image-1.png)
+ ![Client Server Architecture Diagram](./images/image-1.png)
  Client Server Architecture Diagram
 
 ## How it will work in our system 
@@ -143,8 +143,12 @@ Stores all the entities and relationships defined in your ERD:
 
 - Data is typically exchanged in JSON format (e.g., for reviews, progress updates, recommendations). 
 
- 
+<br>
 
+![Client Server Architecture - System Desgin](./images/server.png)
+Client Server Architecture - System Desgin
+
+<br>
 **Benefits of Client/Server Architecture**
 
 1. **Scalability:** 
