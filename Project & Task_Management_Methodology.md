@@ -12,7 +12,7 @@ The following are some important practices of Agile:
 -	Daily Stand-ups: These are short meetings that take place every day, during which team members share updates on their progress and discuss their future moves.
 -	Retrospectives: These sessions take place at the end of each sprint to discuss what went well and to determine areas where improvements may be made.
 
-![Agile Methodology](https://github.com/earvin-tech/Book_Application/blob/eeb7897f56bcd3b9e716c03b79958919715f48f1/images/Agile%20Process.png)
+![Agile Methodology](./images/Agile%20Process.png)
 
 ### **Scrum Methodology**
 Scrum is an Agile framework that organizes software development into cycles called Sprints, which typically run between two and four weeks. At the beginning of each sprint, the team holds a planning meeting in which they select items from a backlog that they think they will be able to do within the sprint.
@@ -29,7 +29,7 @@ The following are the components of Scrum that are utilized:
 
 -	Sprint Retrospective: This is a meeting that takes place at the conclusion of each sprint to reflect on what went well and what may be improved for the next sprint.
 
-![Scrum Process](https://github.com/earvin-tech/Book_Application/blob/eeb7897f56bcd3b9e716c03b79958919715f48f1/images/Scrum%20Process.png)
+![Scrum Process](./images/Scrum%20Process.png)
 
 ### **Task Management Tool: Trello**
 
@@ -56,7 +56,7 @@ The following is an example of how Sprint Planning and Trello may be used togeth
 
 -	Retrospective: The team talks about possible improvements for the upcoming sprint and adjusts the Trello lists and cards based on this feedback.
 
-![Scrum Tool Trello](https://github.com/earvin-tech/Book_Application/blob/eeb7897f56bcd3b9e716c03b79958919715f48f1/images/Scrum_Tool_Trello.jpg)
+![Scrum Tool Trello](./images/Scrum_Tool_Trello.jpg)
 
 ## **References**
 -	https://asana.com/resources/agile-methodology
