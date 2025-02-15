@@ -8,7 +8,20 @@ We want to make sure that this application is accessible to everyone. Some commo
    - It would be great to allow a large number of users to test the features however this is a very small scale project it will not have as much resources to allow for such a large number of user testing.
    - We will strive to make forms inclusive taking into account all user needs for the UI.
   
-2. Responsivity
+2. Responsive design
 
 We will strive to make the application responsive to as many device types as possible.
-   - We will be following the bootstrap  
+   - We will be following the bootstrap media breakpoints. Media breakpoints are the points at which the applications User interface will change view based on screen size (width in px).   
+      -  For mobile view: 576px and below
+      -  For tablet view: 768px to 992px
+      -  For desktop view: 992px and above (for any devices larger as well such as TV or multi-monitor set ups)
+  
+3. Security and Authorization 
+
+4. Documentation
+
+Documentation is important for allowing our fellow peers in web development to understand the workings of our app. But documentation is not just for our peers but potential users looking to test or use our app. 
+   - Once we start developing we will document more in a README.md file in out GitHub repository. 
+   - Additionally we will have frequent commits on our GitHub to document the whole development stage. 
+   - Every relevant object, whether class or function or block of code will contain doc strings, comments, and notes. Again this is for fellow developers to look at and understand our code.
+   - Our ERD, Wireframes, User stories all give different insight to our application's design process. 
