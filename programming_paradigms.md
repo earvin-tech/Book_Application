@@ -5,7 +5,7 @@ Using a real world example, let us represent a bank account. So a bank account's
 
 ```py
 class Account:
-    # Initialising the parameters of the class
+    # Initializing the parameters of the class
     def __init__(self, account_type, id, balance=0.0): 
         # 'checking', 'savings', etc.
         self.account_type = account_type  
@@ -79,7 +79,7 @@ newAccount.changePassword("new_password")
 console.log(newAccount.getPassword()) // Outputs: new_password
 ```
 
-In the example show above we have a class LoginAcount which has private properties 'username' and 'password'. These properties are accessed using the methods defined in the class.
+In the example show above we have a class LoginAccount which has private properties 'username' and 'password'. These properties are accessed using the methods defined in the class.
 
 #### <ins>**Abstraction**</ins>
 
@@ -181,7 +181,11 @@ Additionally from representing the data a model will also be responsible for san
 
 ### View
 
+As the view is responsible for the presentation of data it uses frontend frameworks such as React to render the data requested from the database and allows users to input data if they wish.  
+
 ### Controller
+
+The controller routes requests and responses from the user input in the view to either fetch or manipulate data from the database through the model. The controller additionally is responsible for send status codes, this can be for data not found, invalid, or forbidden in some cases. The controller is responsible for what is known as CRUD operations which deals with Creating, Reading, Updating, and Deleting data. 
 
 ![MVC](./images/MVC_diagram_2.png)
 
@@ -192,10 +196,9 @@ How data flows from Database to user and vice-versa via MVC.
 - Codes are easy to maintain and they can be extended easily.
 - The MVC model component can be tested separately.
 - The components of MVC can be developed simultaneously.
-- It reduces complexity by dividing an application into three units. Model, view, and controller.
-- It supports Test Driven Development (TDD).
+- It reduces complexity by dividing an application into three units.
+- It supports Test Driven Development.
 - It works well for Web apps that are supported by large teams of web designers and developers.
-- This architecture helps to test components independently as all classes and objects are independent of each other
 
 ## References 
 - https://levelup.gitconnected.com/principles-of-object-oriented-programming-33a08094afe6
