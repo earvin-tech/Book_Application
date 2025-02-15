@@ -130,7 +130,7 @@ class Student extends Person { // extends keyword denotes that the new Student c
 const student1 = new Student('Earvin');
 student1.greet(); // Outputs: Hello Earvin
 ```
-In the above example the Student class does not need to redefine the greet function as it inherits the function from the person class. Iheritance allows reusability of code for child classes.
+In the above example the Student class does not need to redefine the greet function as it inherits the function from the person class. Inheritance allows reusability of code for child classes.
 
 #### <ins>**Polymorphism**</ins>
 
@@ -173,7 +173,19 @@ MVC separates an application into three components; the model, the view, and the
 
 ![MVC Diagram](./images/MVC_diagram.png)
 
-Diagram of how MVC works.
+Diagram of how MVC works within an application.
+
+### Model
+
+Additionally from representing the data a model will also be responsible for sanitizing and validating data. When a request is sent to the model from the controller if it is requesting to fetch data the model will request this data using a query language (we will be using mongodb) from the database the application is connected to. 
+
+### View
+
+### Controller
+
+![MVC](./images/MVC_diagram_2.png)
+
+How data flows from Database to user and vice-versa via MVC.
 
 ## **Advantages of MVC**
 
