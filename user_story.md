@@ -23,7 +23,7 @@
 
 ## How This User Story Translates to Development
 
-- **Feature:** Implement a recommendation engine that analyzes the user’s reading history, ratings, and preferences to suggest books. (e.g book rated over 3 stars will be generate similiar books)
+- **Feature:** Implement a recommendation engine that analyzes the user’s reading history, ratings, and preferences to suggest books. (e.g book rated over 3 stars will be generate similar books)
 
 - **Backend:** The server processes the user’s data and generates recommendations using algorithms (e.g., collaborative filtering or content-based filtering).
 
@@ -46,7 +46,7 @@
 
 - "Stay motivated and ensure I’m making time for reading."
 
-- this highlights the user’s need for a tool to help them prioritize reading in their busy schedule. (e.g reward pop-up congragulating for reaching goal)
+- this highlights the user’s need for a tool to help them prioritize reading in their busy schedule. (e.g reward pop-up congratulating for reaching goal)
 
 3. **Want/Feature/Function:**
 
