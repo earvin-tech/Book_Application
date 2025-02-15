@@ -4,7 +4,12 @@ With the client/server architecture, the system is dived into two components of 
 
 The server is the back-end that processes the requests and data that then sends the information back to the client.  
 
-This client/server relationship communicate over a network such as the internet using protocols like http/https. 
+This client/server relationship communicate over a network such as the internet using protocols like http/https.
+
+<br> 
+
+ ![alt text](image-1.png)
+ Client Server Architecture Diagram
 
 ## How it will work in our system 
 
