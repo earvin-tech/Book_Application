@@ -29,7 +29,7 @@ The following are the components of Scrum that are utilized:
 
 -	Sprint Retrospective: This is a meeting that takes place at the conclusion of each sprint to reflect on what went well and what may be improved for the next sprint.
 
-![alt text](image-3.png)
+![Scrum Process](https://github.com/earvin-tech/Book_Application/blob/main/images/Scrum%20Process.png?raw=true)
 
 ### **Task Management Tool: Trello**
 
@@ -56,7 +56,7 @@ The following is an example of how Sprint Planning and Trello may be used togeth
 
 -	Retrospective: The team talks about possible improvements for the upcoming sprint and adjusts the Trello lists and cards based on this feedback.
 
-![alt text](image-4.png)
+![Trello](https://github.com/earvin-tech/Book_Application/blob/main/images/Scrum_Tool_Trello.jpg?raw=true)
 ## **References**
 -	https://asana.com/resources/agile-methodology
 -	https://www.atlassian.com/agile
