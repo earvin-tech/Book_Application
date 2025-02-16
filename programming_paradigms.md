@@ -179,6 +179,29 @@ Diagram of how MVC works within an application.
 
 Additionally from representing the data a model will also be responsible for sanitizing and validating data. When a request is sent to the model from the controller if it is requesting to fetch data the model will request this data using a query language (we will be using mongodb) from the database the application is connected to. 
 
+```js
+const mongoose = require("mongoose");
+
+// Make a schema with data properties
+const UserSchema = new mongoose.Schema({
+	email: String,
+	password: String, 
+	username: String
+});
+
+
+// Make a model that uses the schema 
+//								Name in DB, schema to use for its validation rules 
+const UserModel = mongoose.model('User', UserSchema);
+
+// Export the model 
+module.exports = {
+	UserModel
+}
+```
+
+Above is an example of a model and schema for an entity in NodeJS using the mongoose library. The data will be represented in a MongoDB database. The model is responsible for checking what data goes in the database.
+
 ### View
 
 As the view is responsible for the presentation of data it uses frontend frameworks such as React to render the data requested from the database and allows users to input data if they wish.  
