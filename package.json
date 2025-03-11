@@ -4,8 +4,8 @@
   "description": "The book app allows users to save their favourite books information, rate them, and track reading progress. Additionally the app has a social aspect which allows the recommending of books between users.",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/index.js",
-    "dev": "NODE_ENV=development node --watch src/index.js"
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon -L src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,9 @@
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.12.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9"
   }
 }
