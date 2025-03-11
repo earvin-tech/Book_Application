@@ -47,6 +47,23 @@ const userSchema = new mongoose.Schema(
     }
 );
 
+// check for raw pw and hash
+
+userSchema.pre("save", async (next) => {
+    if (!this.isModified("password")) {
+        return next();
+    }
+
+    // assume pw has been modified here onwards
+    if (!this.salt) {
+        this.salt = crypto.randomBytes(64).toString("hex");
+    }
+
+    this.password = crypto.scryptSync(this.password, this.salt, 64).toString("hex");
+
+    next();
+});
+
 // MAKE A MODEL USING USER SCHEMA
 const User = mongoose.model("User", userSchema);
 
