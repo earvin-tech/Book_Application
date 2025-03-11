@@ -1,0 +1,29 @@
+{
+  "name": "book_app",
+  "version": "1.0.0",
+  "description": "The book app allows users to save their favourite books information, rate them, and track reading progress. Additionally the app has a social aspect which allows the recommending of books between users.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=development node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earvin-tech/Book_Application.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/earvin-tech/Book_Application/issues"
+  },
+  "homepage": "https://github.com/earvin-tech/Book_Application#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.12.1"
+  }
+}
