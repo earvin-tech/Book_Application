@@ -1,4 +1,4 @@
-const { databaseConnect } = require("../Utils/database");
+const { databaseConnect } = require("./Utils/database");
 const { app } = require("./server");
 
 const dotenv = require("dotenv");

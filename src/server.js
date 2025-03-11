@@ -3,6 +3,9 @@ const { default: mongoose } = require("mongoose");
 
 const app = express();
 
+// Allow us to send json body data on our requests
+app.use(express.json());
+
 // configure
 app.get("/", (request, response) => {
     response.json({
@@ -23,6 +26,9 @@ app.get("/databaseHealth", (request, response) => {
         host: databaseHost
     });
 });
+
+const userRouter = require("./controllers/userController");
+app.use("/users", userRouter);
 
 module.exports = {
     app
