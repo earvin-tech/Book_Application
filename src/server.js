@@ -29,6 +29,8 @@ app.get("/databaseHealth", (request, response) => {
 
 const userRouter = require("./controllers/userController");
 app.use("/users", userRouter);
+const bookRouter = require("./controllers/bookController");
+app.use("/books", bookRouter);
 
 module.exports = {
     app
