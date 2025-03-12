@@ -1,5 +1,6 @@
 const express = require("express");
 const { User } = require("../models/userModel");
+const { createJwt } = require("../Utils/jwtFunctions");
 const userRouter = express.Router();
 
 userRouter.post("/", async (request, response) => {
@@ -12,8 +13,11 @@ userRouter.post("/", async (request, response) => {
         about: about
     });
 
+    let newUserJwt = createJwt(newUser._id, newUser.name, newUser.emailVerified);
+
     response.json({
-        newUser: newUser
+        newUser: newUser,
+        userJwt: newUserJwt
     });
 });
 
