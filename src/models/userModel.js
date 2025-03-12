@@ -64,6 +64,18 @@ userSchema.pre("save", async function (next) {
     next();
 });
 
+// add a compare password method to model
+userSchema.methods.comparePassword = function (passwordToCheck) {
+    // grab user salt value
+    let userSalt = this.salt;
+
+    // hash and salt password to check
+    let hashedAndSaltedPasswordToCheck = crypto.scryptSync(passwordToCheck, userSalt, 64).toString("hex");
+
+    // compare hashed and salted version of passwordToCheck against user's password
+    return this.password == hashedAndSaltedPasswordToCheck;
+}
+
 // MAKE A MODEL USING USER SCHEMA
 const User = mongoose.model("User", userSchema);
 

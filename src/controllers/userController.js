@@ -21,4 +21,35 @@ userRouter.post("/", async (request, response) => {
     });
 });
 
+userRouter.post("/login", async (request, response) => {
+    // get user email and password from request
+    let {email, password} = request.body;
+
+    // find the user by name 
+    let foundUser = await User.findOne({email: email});
+
+
+    if (foundUser == null) {
+        response.json({
+            message: "Invalid email or password."
+        });
+    } else {
+        // compare the saved user password to the provided user password
+        let doesPasswordMatch = foundUser.comparePassword(password);
+        if (doesPasswordMatch) {
+            let newJwt = createJwt(foundUser._id, foundUser.name, foundUser.emailVerified);
+            
+            response.json({
+                result: newJwt
+            });
+        } else {
+            response.json({
+               message: "Incorrect login details." 
+            });
+        }
+
+        
+    }
+})
+
 module.exports = userRouter;
