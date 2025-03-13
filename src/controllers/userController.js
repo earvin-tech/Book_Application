@@ -55,7 +55,14 @@ userRouter.post("/login", async (request, response) => {
 userRouter.get("/", routeRequiresValidJwt, async (request, response) => {
     response.json({
         message: request.customData
-    })
-})
+    });
+});
+
+// userRouter.get("/", async (request, response) => {
+//     const users = await User.find();
+//     response.json({
+//         result: users
+//     });
+// })
 
 module.exports = userRouter;

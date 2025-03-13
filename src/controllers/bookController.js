@@ -17,4 +17,11 @@ bookRouter.post("/", async (request, response) => {
     });
 });
 
+bookRouter.get("/", async (request, response) => {
+    let books = await Book.find();
+    console.log(books);
+    response.json({
+        result: books
+    });
+});
 module.exports = bookRouter;
