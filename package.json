@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
-    "dev": "cross-env NODE_ENV=development nodemon -L src/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon -L src/index.js",
+    "seed": "node src/Utils/seed.js",
+    "wipe": "node src/Utils/wipe.js"
   },
   "repository": {
     "type": "git",
