@@ -32,6 +32,13 @@ app.use("/users", userRouter);
 const bookRouter = require("./controllers/bookController");
 app.use("/books", bookRouter);
 
+app.use((error, request, response, next) => {
+    response.json({
+        message: "Something went wrong",
+        error: error.message
+    });
+});
+
 module.exports = {
     app
 }
