@@ -1,11 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require("cors");
-const connectDB = require("./config/db");
+
+const app = express();
+
+
+// const cors = require("cors");
+// const connectDB = require("./config/db");
+
 
 dotenv.config();
-connectDB();
+// connectDB();
 
 // Allow us to send json body data on our requests
 app.use(express.json());
@@ -39,7 +44,8 @@ const readingProgressRouter = require("./controllers/readingProgressController")
 app.use("/users", userRouter);
 app.use("/books", bookRouter);
 app.use("/reviews", reviewRouter); 
-app.use("/reviews", reviewRouter)
+app.use("/reviews", reviewRouter);
+app.use("readingProgress", readingProgressRouter);
 
 app.use((error, request, response, next) => {
     response.json({

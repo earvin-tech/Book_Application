@@ -1,7 +1,7 @@
 const express = require("express");
 const { User } = require("../models/userModel");
-const { createJwt } = require("../src/Utils/jwtFunctions");
-const { routeRequiresValidJwt } = require("../src/middleware/UserJwtMiddleware");
+const { createJwt } = require("../Utils/jwtFunctions");
+const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
 const userRouter = express.Router();
 
 userRouter.post("/", async (request, response) => {

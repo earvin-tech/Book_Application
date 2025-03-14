@@ -1,5 +1,5 @@
 const express = require("express");
-const { ReadingProgress } = require("./ReadingProgressController");
+const { ReadingProgress } = require("../models/readingProgressModel");
 const readingProgressRouter = express.Router();
 
 readingProgressRouter.post("/", async (request, response) => {
