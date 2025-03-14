@@ -9,7 +9,7 @@ const app = express();
 // const connectDB = require("./config/db");
 
 
-dotenv.config();
+// dotenv.config();
 // connectDB();
 
 // Allow us to send json body data on our requests
