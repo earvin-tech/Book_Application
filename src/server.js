@@ -1,7 +1,11 @@
 const express = require("express");
-const { default: mongoose } = require("mongoose");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const connectDB = require("./config/db");
 
-const app = express();
+dotenv.config();
+connectDB();
 
 // Allow us to send json body data on our requests
 app.use(express.json());
@@ -28,9 +32,14 @@ app.get("/databaseHealth", (request, response) => {
 });
 
 const userRouter = require("./controllers/userController");
-app.use("/users", userRouter);
 const bookRouter = require("./controllers/bookController");
+const reviewRouter = require("./controllers/reviewController"); 
+const readingProgressRouter = require("./controllers/readingProgressController");
+
+app.use("/users", userRouter);
 app.use("/books", bookRouter);
+app.use("/reviews", reviewRouter); 
+app.use("/reviews", reviewRouter)
 
 app.use((error, request, response, next) => {
     response.json({
