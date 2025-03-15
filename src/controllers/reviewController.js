@@ -23,9 +23,9 @@ reviewRouter.post("/", async (request, response) => {
       book: bookId,
     });
 
-
-    book.reviews.push(newReview._id);
-    await book.save();
+    // console.log(newReview);
+    // book.reviews.push(newReview._id);
+    // await book.save();
 
     response.status(201).json({
       message: "Review posted successfully",
