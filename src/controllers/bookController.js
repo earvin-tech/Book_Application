@@ -30,13 +30,12 @@ bookRouter.get("/", async (request, response) => {
     });
 });
 
-bookRouter.delete("/:userId/:bookId", async (request, response) => {
-    let { userId, bookId } = request.params;
+bookRouter.delete("/:bookId", async (request, response) => {
+    let bookId = request.params.bookId;
     // console.log(userId, bookId);
     try {
         let deletedBook = await Book.deleteOne({
-            userId: userId,
-            book: bookId,
+            _id: bookId
         });
         // console.log(deletedBook);
 

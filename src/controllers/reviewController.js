@@ -1,7 +1,7 @@
 const express = require("express");
+const { Book } = require("../models/bookModel");
+const { User } = require("../models/userModel");
 const Review = require("../models/reviewModel");
-const Book = require("../models/bookModel");
-const User = require("../models/userModel");
 const reviewRouter = express.Router();
 
 reviewRouter.post("/", async (request, response) => {

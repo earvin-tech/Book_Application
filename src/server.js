@@ -44,8 +44,7 @@ const readingProgressRouter = require("./controllers/readingProgressController")
 app.use("/users", userRouter);
 app.use("/books", bookRouter);
 app.use("/reviews", reviewRouter); 
-app.use("/reviews", reviewRouter);
-app.use("readingProgress", readingProgressRouter);
+app.use("/readingProgress", readingProgressRouter);
 
 app.use((error, request, response, next) => {
     response.json({

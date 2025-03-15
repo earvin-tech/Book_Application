@@ -1,6 +1,8 @@
 const { default: mongoose } = require("mongoose");
 const { User } = require("../models/userModel");
 const { Book } = require("../models/bookModel");
+const { Review } = require("../models/reviewModel");
+const { ReadingProgress } = require("../models/readingProgressModel");
 
 
 async function databaseConnect(targetDatabaseURL = null) {

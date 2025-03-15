@@ -70,7 +70,7 @@ readingProgressRouter.delete("/:userId/:bookId", async (request, response) => {
   let { userId, bookId } = request.params;
 
   try {
-    let deletedReadingProgress = await ReadingProgress.findOneAndDelete({
+    let deletedReadingProgress = await ReadingProgress.deleteOne({
       user: userId,
       book: bookId,
     });
