@@ -32,12 +32,13 @@ bookRouter.get("/", async (request, response) => {
 
 bookRouter.delete("/:userId/:bookId", async (request, response) => {
     let { userId, bookId } = request.params;
-
+    // console.log(userId, bookId);
     try {
-        let deletedBook = await Book.findOneAndDelete({
+        let deletedBook = await Book.deleteOne({
             userId: userId,
             book: bookId,
         });
+        // console.log(deletedBook);
 
         if (!deletedBook) {
             return response.status(404).json({
