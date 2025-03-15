@@ -4,6 +4,7 @@ const { User } = require("../models/userModel");
 const Review = require("../models/reviewModel");
 const reviewRouter = express.Router();
 
+// Create review
 reviewRouter.post("/", async (request, response) => {
   const { body, rating, userId, bookId } = request.body;
 
@@ -36,7 +37,7 @@ reviewRouter.post("/", async (request, response) => {
   }
 });
 
-
+// Read all reviews of a certain book
 reviewRouter.get("/book/:bookId", async (request, response) => {
   const { bookId } = request.params;
 
@@ -50,7 +51,7 @@ reviewRouter.get("/book/:bookId", async (request, response) => {
   }
 });
 
-
+// Read a single review
 reviewRouter.get("/:reviewId", async (request, response) => {
   const { reviewId } = request.params;
 
@@ -67,7 +68,7 @@ reviewRouter.get("/:reviewId", async (request, response) => {
   }
 });
 
-
+// Update a review
 reviewRouter.put("/:reviewId", async (request, response) => {
   const { reviewId } = request.params;
   const { body, rating } = request.body;
@@ -92,7 +93,7 @@ reviewRouter.put("/:reviewId", async (request, response) => {
   }
 });
 
-
+// Delete a review
 reviewRouter.delete("/:reviewId", async (request, response) => {
   const { reviewId } = request.params;
 

@@ -2,6 +2,7 @@ const express = require("express");
 const { ReadingProgress } = require("../models/readingProgressModel");
 const readingProgressRouter = express.Router();
 
+// Create reading progress tracker
 readingProgressRouter.post("/", async (request, response) => {
   let { user, book, progress } = request.body;
 
@@ -20,6 +21,7 @@ readingProgressRouter.post("/", async (request, response) => {
   }
 });
 
+// Read reading progress of a book
 readingProgressRouter.get("/:userId/:bookId", async (request, response) => {
   let { userId, bookId } = request.params;
 
@@ -65,7 +67,7 @@ readingProgressRouter.put("/:userId/:bookId", async (request, response) => {
   }
 });
 
-
+// Delete reading progress
 readingProgressRouter.delete("/:userId/:bookId", async (request, response) => {
   let { userId, bookId } = request.params;
 
