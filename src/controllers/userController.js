@@ -2,11 +2,12 @@ const express = require("express");
 const { User } = require("../models/userModel");
 const { createJwt } = require("../Utils/jwtFunctions");
 const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
+const { checkIfEmail } = require("../middleware/userValidation");
 // const { updateSearchIndex } = require("../models/reviewModel");
 const userRouter = express.Router();
 
-// Create User
-userRouter.post("/", async (request, response) => {
+// Create User [Register]
+userRouter.post("/register", checkIfEmail, async (request, response) => {
     let {username, email, about, password} = request.body;
 
     let newUser = await User.create({
@@ -73,6 +74,8 @@ userRouter.put("/:userId", routeRequiresValidJwt, async (request, response) => {
     const { userId } = request.params;
     const { email, about, password } = request.body;
 
+
+
     try {
         const updatedUser = await User.findByIdAndUpdate(
             userId,
@@ -94,5 +97,9 @@ userRouter.put("/:userId", routeRequiresValidJwt, async (request, response) => {
         response.status(500).json({ error: error.message });
     }
 });
+
+userRouter.delete("/:userId", routeRequiresValidJwt, async (request, response) => {
+
+})
 
 module.exports = userRouter;
