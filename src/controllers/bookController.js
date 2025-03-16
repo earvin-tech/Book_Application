@@ -53,4 +53,29 @@ bookRouter.delete("/:bookId", async (request, response) => {
         response.status(500).json({ error: error.message });
     }
 });
+
+bookRouter.post('/rate/:bookId', async (request, response) => {
+    const { rating } = request.body; // rating submitted by the user
+    const bookId = request.params.bookId;
+
+    try {
+        let book = await Book.findById(bookId);
+        if (!book) {
+            return response.status(404).json({ message: "Book not found." });
+        }
+
+        // Calculate the new average rating
+        let newAverage = (book.averageRating * book.ratingsCount + rating) / (book.ratingsCount + 1);
+        let newRatingsCount = book.ratingsCount + 1;
+
+        // Update the book
+        book.averageRating = newAverage;
+        book.ratingsCount = newRatingsCount;
+        await book.save();
+
+        response.json({ message: "Rating added successfully", book });
+    } catch (error) {
+        response.status(500).json({ error: error.message });
+    }
+});
 module.exports = bookRouter;
