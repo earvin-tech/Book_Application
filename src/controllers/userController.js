@@ -2,12 +2,18 @@ const express = require("express");
 const { User } = require("../models/userModel");
 const { createJwt } = require("../Utils/jwtFunctions");
 const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
-const { checkIfEmail } = require("../middleware/userValidation");
+const { checkIfEmail, checkUsernameLength, checkPasswordLength} = require("../middleware/userValidation");
 // const { updateSearchIndex } = require("../models/reviewModel");
 const userRouter = express.Router();
 
 // Create User [Register]
-userRouter.post("/register", checkIfEmail, async (request, response) => {
+userRouter.post("/register",
+     checkIfEmail, 
+     checkUsernameLength,
+     checkPasswordLength, 
+     async (request, response) => 
+{
+
     let {username, email, about, password} = request.body;
 
     let newUser = await User.create({
