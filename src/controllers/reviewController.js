@@ -2,10 +2,17 @@ const express = require("express");
 const { Book } = require("../models/bookModel");
 const { User } = require("../models/userModel");
 const Review = require("../models/reviewModel");
+const { checkRating, checkComment, checkProductId, checkReviewId } = require("../middleware/reviewValidation");
 const reviewRouter = express.Router();
 
 // Create review
-reviewRouter.post("/", async (request, response) => {
+reviewRouter.post("/",
+  checkRating,
+  checkComment,
+  checkProductId,
+  checkReviewId,
+   async (request, response) => 
+  {
   const { body, rating, userId, bookId } = request.body;
 
   try {

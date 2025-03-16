@@ -76,14 +76,14 @@ userRouter.get("/", async (request, response) => {
 });
 
 // Update User details
-userRouter.put("/:userId", routeRequiresValidJwt, async (request, response) => {
+userRouter.put("/:userId", (request, response) => {
     const { userId } = request.params;
     const { email, about, password } = request.body;
 
 
 
     try {
-        const updatedUser = await User.findByIdAndUpdate(
+        const updatedUser = User.findByIdAndUpdate(
             userId,
             { email, about, password },
             { new: true }
