@@ -187,7 +187,9 @@ This project will be implementing the Javascript style for all program code. The
 **Reference** - https://www.w3schools.com/JS/js_conventions.asp
 
 
+GitHub repo: https://github.com/earvin-tech/Book_Application
+
 ## Collaborators
 - [Tamika Short](https://github.com/tshort11)
 - [Earvin Tumpao](https://github.com/earvin-tech)
-- Hammad Nasir
+- [Hammad Nasir](https://github.com/h4mm4)
