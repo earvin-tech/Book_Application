@@ -1,8 +1,9 @@
 const express = require("express");
 const { Book } = require("../models/bookModel");
+const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
 const bookRouter = express.Router();
 
-bookRouter.post("/", async (request, response) => {
+bookRouter.post("/", routeRequiresValidJwt, async (request, response) => {
     let {userId,title, author, genre, summary, ratingsCount} = request.body;
     
     try{
@@ -23,7 +24,7 @@ bookRouter.post("/", async (request, response) => {
     }
 });
 
-bookRouter.get("/", async (request, response) => {
+bookRouter.get("/", routeRequiresValidJwt, async (request, response) => {
     let books = await Book.find();
     console.log(books);
     response.json({
@@ -31,7 +32,7 @@ bookRouter.get("/", async (request, response) => {
     });
 });
 
-bookRouter.delete("/:bookId", async (request, response) => {
+bookRouter.delete("/:bookId", routeRequiresValidJwt, async (request, response) => {
     let bookId = request.params.bookId;
     // console.log(userId, bookId);
     try {
@@ -55,7 +56,7 @@ bookRouter.delete("/:bookId", async (request, response) => {
     }
 });
 
-bookRouter.post('/rate/:bookId', async (request, response) => {
+bookRouter.post('/rate/:bookId', routeRequiresValidJwt, async (request, response) => {
     const { rating } = request.body; // rating submitted by the user
     const bookId = request.params.bookId;
 

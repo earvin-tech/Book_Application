@@ -3,10 +3,12 @@ const { Book } = require("../models/bookModel");
 const { User } = require("../models/userModel");
 const Review = require("../models/reviewModel");
 const { checkRating, checkComment, checkProductId, checkReviewId } = require("../middleware/reviewValidation");
+const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
 const reviewRouter = express.Router();
 
 // Create review
 reviewRouter.post("/",
+  routeRequiresValidJwt,
   checkRating,
   checkComment,
   checkProductId,
@@ -45,7 +47,7 @@ reviewRouter.post("/",
 });
 
 // Read all reviews of a certain book
-reviewRouter.get("/book/:bookId", async (request, response) => {
+reviewRouter.get("/book/:bookId", routeRequiresValidJwt, async (request, response) => {
   const { bookId } = request.params;
 
   try {
@@ -59,7 +61,7 @@ reviewRouter.get("/book/:bookId", async (request, response) => {
 });
 
 // Read a single review
-reviewRouter.get("/:reviewId", async (request, response) => {
+reviewRouter.get("/:reviewId", routeRequiresValidJwt, async (request, response) => {
   const { reviewId } = request.params;
 
   try {
@@ -76,7 +78,7 @@ reviewRouter.get("/:reviewId", async (request, response) => {
 });
 
 // Update a review
-reviewRouter.put("/:reviewId", async (request, response) => {
+reviewRouter.put("/:reviewId", routeRequiresValidJwt, async (request, response) => {
   const { reviewId } = request.params;
   const { body, rating } = request.body;
 
@@ -101,7 +103,7 @@ reviewRouter.put("/:reviewId", async (request, response) => {
 });
 
 // Delete a review
-reviewRouter.delete("/:reviewId", async (request, response) => {
+reviewRouter.delete("/:reviewId", routeRequiresValidJwt, async (request, response) => {
   const { reviewId } = request.params;
 
   try {

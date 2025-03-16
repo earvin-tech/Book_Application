@@ -1,9 +1,10 @@
 const express = require("express");
 const { ReadingProgress } = require("../models/readingProgressModel");
+const { routeRequiresValidJwt } = require("../middleware/UserJwtMiddleware");
 const readingProgressRouter = express.Router();
 
 // Create reading progress tracker
-readingProgressRouter.post("/", async (request, response) => {
+readingProgressRouter.post("/", routeRequiresValidJwt, async (request, response) => {
   let { user, book, progress } = request.body;
 
   try {
@@ -44,7 +45,7 @@ readingProgressRouter.get("/:userId/:bookId", async (request, response) => {
 });
 
 // Update reading progress for a specific user and book
-readingProgressRouter.put("/:userId/:bookId", async (request, response) => {
+readingProgressRouter.put("/:userId/:bookId", routeRequiresValidJwt, async (request, response) => {
   let { userId, bookId } = request.params;
   let { progress } = request.body;
 
@@ -68,7 +69,7 @@ readingProgressRouter.put("/:userId/:bookId", async (request, response) => {
 });
 
 // Delete reading progress
-readingProgressRouter.delete("/:userId/:bookId", async (request, response) => {
+readingProgressRouter.delete("/:userId/:bookId", routeRequiresValidJwt, async (request, response) => {
   let { userId, bookId } = request.params;
 
   try {
