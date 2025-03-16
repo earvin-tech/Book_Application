@@ -26,7 +26,7 @@ const bookSchema = new mongoose.Schema(
             type: String,
             required: false,
             unique: false
-        }
+        },
           ratingsCount: {
             type: Number,
             required: true,

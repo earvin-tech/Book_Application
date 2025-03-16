@@ -3,7 +3,7 @@ const { Book } = require("../models/bookModel");
 const bookRouter = express.Router();
 
 bookRouter.post("/", async (request, response) => {
-    let {userId,title, author, genre, summary} = request.body;
+    let {userId,title, author, genre, summary, ratingsCount} = request.body;
     
     try{
         let newBook = await Book.create({
@@ -11,7 +11,8 @@ bookRouter.post("/", async (request, response) => {
             title: title,
             author: author,
             genre: genre,
-            summary: summary
+            summary: summary,
+            ratingsCount: ratingsCount
         });
     
         response.json({
