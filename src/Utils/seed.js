@@ -1,11 +1,11 @@
-import { default as mongoose } from "mongoose";
-import { User } from "../models/userModel";
-import { Book } from "../models/bookModel";
-import { databaseConnect } from "./database";
-import { config } from "dotenv";
+// import { default as mongoose } from "mongoose";
+const { User } = require("../models/userModel");
+const { Book } = require("../models/bookModel");
+const { ReadingProgress } = require("../models/readingProgressModel");
+const { databaseConnect } = require("./database");
+const dotenv = require("dotenv");
 
-config();
-
+dotenv.config();
 
 databaseConnect();
 
@@ -80,6 +80,22 @@ async function seedData() {
 
     await Book.create(newBooks);
 
+    let bookId1 = await Book.find({title: "Lord of the Rings: The Fellowship of The Ring"}).
+        then(
+            books => {
+                return books[0]._id;
+        }
+    )
+
+    let readingProgresses = [
+        {
+            user: userId1,
+            book: bookId1,
+            progress: "In Progress"
+        }
+    ];
+
+    await ReadingProgress.create(readingProgresses);
 
 }
 
