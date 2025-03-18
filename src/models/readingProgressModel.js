@@ -14,6 +14,7 @@ const readingProgressSchema = new mongoose.Schema(
     }, 
     progress: {
       type: String,
+      enum: ["Not Yet Started", "In Progress", "Completed"],
       required: true
     }, 
     lastUpdated: {
