@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "The book app allows users to save their favourite books information, rate them, and track reading progress. Additionally the app has a social aspect which allows the recommending of books between users.",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
     "dev": "cross-env NODE_ENV=development nodemon -L src/index.js",

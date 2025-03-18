@@ -14,7 +14,7 @@ async function databaseConnect(targetDatabaseURL = null) {
 
 
 async function databaseDisconnect() {
-    
+   await mongoose.disconnect();
 }
 
 module.exports = {
