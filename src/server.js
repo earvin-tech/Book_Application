@@ -1,10 +1,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
+const cors = require("cors");
 
 const app = express();
 
+// configure server security using helmet
+app.use(helmet());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.contentSecurityPolicy({
+    directives:{
+        defaultSrc:["'self'"]
+    }
+}));
 
-// const cors = require("cors");
+// configure cors
+var corsOptions = {
+    origin: ["http://localhost:5000"],
+    optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
 
 // Allow us to send json body data on our requests
 app.use(express.json());
