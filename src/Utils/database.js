@@ -13,11 +13,12 @@ async function databaseConnect(targetDatabaseURL = null) {
 }
 
 
-async function databaseDisconnect() {
-   await mongoose.disconnect();
-}
+// async function databaseDisconnect() {
+//     console.log("Closing database connection!");
+//     await mongoose.connection.close();
+// }
 
 module.exports = {
     databaseConnect,
-    databaseDisconnect
+    // databaseDisconnect
 }

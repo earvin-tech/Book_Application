@@ -1,9 +1,9 @@
-// import { default as mongoose } from "mongoose";
 const { User } = require("../models/userModel");
 const { Book } = require("../models/bookModel");
 const { ReadingProgress } = require("../models/readingProgressModel");
-const { databaseConnect } = require("./database");
+const { databaseConnect, databaseDisconnect } = require("./database");
 const dotenv = require("dotenv");
+const Review = require("../models/reviewModel");
 
 dotenv.config();
 
@@ -87,18 +87,49 @@ async function seedData() {
         }
     )
 
+    let bookId2 = await Book.find({title: "The Hunger Games"}).
+        then(
+            books2 => {
+                return books2[0]._id;
+        }
+    )
+
     let readingProgresses = [
         {
             user: userId1,
             book: bookId1,
             progress: "In Progress"
+        },
+        {
+            user: userId2,
+            book: bookId2,
+            progress: "Completed"
         }
     ];
 
     await ReadingProgress.create(readingProgresses);
 
+    let reviews = [
+        {
+            body: "Pretty good so far, watched the movies and the book has additional lore and character development.",
+            rating: 4,
+            user: userId1,
+            book: bookId1
+        },
+        {
+            body: "Amazing first book of the trilogy can't wait to read the rest!",
+            rating: 5,
+            user: userId2,
+            book: bookId2
+        }
+    ];
+
+    await Review.create(reviews);
 }
+
 
 seedData();
 
 console.log("Database seeded.");
+
+// databaseDisconnect();
