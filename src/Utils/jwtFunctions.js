@@ -10,7 +10,7 @@ function createJwt(userId, userName, UserEmailVerified) {
         },
         process.env.JWT_SECRET_KEY,
         {
-            expiresIn: "1h"
+            expiresIn: "6h"
         }
     )
 }

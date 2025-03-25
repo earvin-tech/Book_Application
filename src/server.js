@@ -17,7 +17,7 @@ app.use(helmet.contentSecurityPolicy({
 
 // configure cors
 var corsOptions = {
-    origin: ["http://localhost:5000"],
+    origin: ["http://localhost:5000", "https://book-application-d96a.onrender.com"],
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
