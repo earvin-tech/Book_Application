@@ -1,5 +1,3 @@
-const validator = require("validator");
-
 
 function checkRating(request, response, next) {
     const rating = request.body.rating;
